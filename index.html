@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>SaaS Analytics Dashboard | Nova AI</title>
+    <meta
+      name="description"
+      content="Professional SaaS analytics dashboard with sidebar navigation, user management, project tracking, and analytics panels."
+    >
+    <meta
+      name="keywords"
+      content="saas dashboard, admin panel, analytics dashboard, modern UI, web app admin"
+    >
+    <link rel="stylesheet" href="styles.css" >
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo">
+          <h2>Nova AI</h2>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#overview" class="active"><span>Dashboard</span></a>
+          <a href="#analytics"><span>Analytics</span></a>
+          <a href="#users"><span>Users</span></a>
+          <a href="#projects"><span>Projects</span></a>
+          <a href="#settings"><span>Settings</span></a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-navbar">
+          <button id="toggleBtn">☰</button>
+          <input
+            type="text"
+            placeholder="Search dashboard..."
+            class="search-bar"
+          />
+          <div class="nav-right">
+            <span class="notification">🔔</span>
+            <div class="profile">
+              <img src="https://i.pravatar.cc/40" alt="Admin" />
+              <span>Admin</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+          <h1>Dashboard Overview</h1>
+          <p>Welcome back! Here's what's happening today.</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h2>Total Users</h2>
+            <p class="stat-number">2,450</p>
+            <span class="stat-desc">Active platform users</span>
+          </div>
+          <div class="stat-card">
+            <h2>Revenue</h2>
+            <p class="stat-number">$18,900</p>
+            <span class="stat-desc">This month's earnings</span>
+          </div>
+          <div class="stat-card">
+            <h2>Active Projects</h2>
+            <p class="stat-number">38</p>
+            <span class="stat-desc">Currently ongoing</span>
+          </div>
+          <div class="stat-card">
+            <h2>Growth</h2>
+            <p class="stat-number">+24%</p>
+            <span class="stat-desc">Compared to last month</span>
+          </div>
+        </div>
+
+        <!-- Analytics + Activity Section -->
+        <section class="analytics" id="analytics">
+          <div class="chart-card">
+            <h3>Revenue Analytics</h3>
+            <div class="chart-placeholder">Chart Coming Soon</div>
+          </div>
+          <div class="activity-card">
+            <h3>Recent Activity</h3>
+            <ul>
+              <li>User Ali signed up</li>
+              <li>New project created</li>
+              <li>Payment of $540 received</li>
+              <li>Server updated successfully</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Users Table -->
+        <section class="users-section" id="users">
+          <h3>Recent Users</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ali Khan</td>
+                  <td>ali@email.com</td>
+                  <td class="active">Active</td>
+                  <td>Admin</td>
+                </tr>
+                <tr>
+                  <td>Sarah Ahmed</td>
+                  <td>sarah@email.com</td>
+                  <td class="pending">Pending</td>
+                  <td>User</td>
+                </tr>
+                <tr>
+                  <td>Usman Raza</td>
+                  <td>usman@email.com</td>
+                  <td class="active">Active</td>
+                  <td>Editor</td>
+                </tr>
+                <tr>
+                  <td>Fatima Noor</td>
+                  <td>fatima@email.com</td>
+                  <td class="inactive">Inactive</td>
+                  <td>User</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Projects Tracker -->
+        <section class="projects-section" id="projects">
+          <h3>Active Projects</h3>
+          <div class="project-item">
+            <div>
+              <h4>AI Website Builder</h4>
+              <p>Status: <span class="active">In Progress</span></p>
+            </div>
+            <span class="progress">75%</span>
+          </div>
+          <div class="project-item">
+            <div>
+              <h4>Real Estate CRM</h4>
+              <p>Status: <span class="pending">Pending Review</span></p>
+            </div>
+            <span class="progress">45%</span>
+          </div>
+          <div class="project-item">
+            <div>
+              <h4>Analytics Automation Tool</h4>
+              <p>Status: <span class="active">Running</span></p>
+            </div>
+            <span class="progress">90%</span>
+          </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="settings-section" id="settings">
+          <h3>Account Settings</h3>
+          <div class="settings-card">
+            <h4>Profile Information</h4>
+            <p>Manage your name, email, and personal details.</p>
+          </div>
+          <div class="settings-card">
+            <h4>Security</h4>
+            <p>Update password and enable two-factor authentication.</p>
+          </div>
+          <div class="settings-card">
+            <h4>Notifications</h4>
+            <p>Control email alerts and dashboard notifications.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- JS -->
+    <script>
+      const toggleBtn = document.getElementById("toggleBtn");
+      const dashboard = document.querySelector(".dashboard");
+
+      toggleBtn.addEventListener("click", () => {
+        dashboard.classList.toggle("collapsed");
+      });
+
+      // Sidebar link active toggle
+      const menuLinks = document.querySelectorAll(".sidebar-nav a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
